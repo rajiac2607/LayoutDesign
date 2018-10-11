@@ -131,4 +131,5 @@
         <item>@string/second_offer_price</item>
         <item>@string/thrid_offer_price</item>
     </string-array>
+    <string name="add">ADD</string>
 </resources>
