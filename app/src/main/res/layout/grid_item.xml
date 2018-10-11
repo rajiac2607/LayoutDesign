@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="in.raji.goldenscent.model.ChildItemModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/relativeLayout3">
@@ -12,7 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@{model.imgResource}"/>
 
     <TextView
         android:id="@+id/text"
@@ -20,5 +27,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/image"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@{model.title}"/>
 </android.support.constraint.ConstraintLayout>
+</layout>

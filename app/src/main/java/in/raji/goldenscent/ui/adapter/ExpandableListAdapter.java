@@ -1,18 +1,19 @@
 package in.raji.goldenscent.ui.adapter;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import in.raji.goldenscent.R;
+import in.raji.goldenscent.databinding.ExpandableListChildItemBinding;
+import in.raji.goldenscent.databinding.ExpandableListParentItemBinding;
+import in.raji.goldenscent.databinding.GridItemBinding;
 import in.raji.goldenscent.model.ChildItemModel;
 import in.raji.goldenscent.model.ParentItemModel;
 
@@ -23,9 +24,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     ArrayList<ParentItemModel> parentList;
     Context context;
 
-    public ExpandableListAdapter(Context context, ArrayList<ParentItemModel> parentList) {
+    public ExpandableListAdapter(ArrayList<ParentItemModel> parentList) {
         this.parentList = parentList;
-        this.context = context;
     }
 
     @Override
@@ -65,28 +65,24 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.
-                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.expandable_list_parent_item, null);
-        }
+        ExpandableListParentItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.expandable_list_parent_item, parent, false);
 
-        TextView textView = convertView.findViewById(R.id.title);
-        textView.setText(parentList.get(groupPosition).getTitle());
+        if (convertView == null) {
+            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.expandable_list_parent_item, parent, false);
+            convertView = binding.getRoot();
+        }
+        binding.setModel(parentList.get(groupPosition));
         return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.
-                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.expandable_list_child_item, null);
+        ExpandableListChildItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.expandable_list_child_item, parent, false);
 
+        if (convertView == null)
+            convertView = binding.getRoot();
 
-        }
-        GridView gridView = convertView.findViewById(R.id.gridView);
-        gridView.setAdapter(new GridAdapter(context, parentList.get(groupPosition).getChildren()));
+        binding.gridView.setAdapter(new GridAdapter(parentList.get(groupPosition).getChildren()));
 
         return convertView;
     }
@@ -98,10 +94,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     class GridAdapter extends BaseAdapter {
         ArrayList<ChildItemModel> children;
-        Context context;
 
-        public GridAdapter(Context context, ArrayList<ChildItemModel> children) {
-            this.context = context;
+        public GridAdapter(ArrayList<ChildItemModel> children) {
             this.children = children;
         }
 
@@ -122,15 +116,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                LayoutInflater layoutInflater = (LayoutInflater) this.context.
-                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = layoutInflater.inflate(R.layout.grid_item, null);
+            GridItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.grid_item, parent, false);
 
-
-            }
-            ((TextView) convertView.findViewById(R.id.text)).setText(children.get(position).getTitle());
-            ((ImageView) convertView.findViewById(R.id.image)).setImageResource(children.get(position).getImgResource());
+            if (convertView == null)
+                convertView = binding.getRoot();
+            binding.setModel(children.get(position));
 
             return convertView;
         }
