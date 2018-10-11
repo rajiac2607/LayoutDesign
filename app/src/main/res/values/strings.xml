@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">GoldenScent</string>
+
+
+    <string name="makeup">Makeup</string>
+    <string name="skincare">Skincare</string>
+    <string name="haircare">Haircare</string>
+    <string name="beauty_tools">Beauty \nTools</string>
+    <string name="home_fragrances">Home \nFragrances</string>
+    <string name="gift">Gift</string>
+    <string name="men">Men</string>
+
+    <string-array name="master_titles">
+        <item>@string/makeup</item>
+        <item>@string/skincare</item>
+        <item>@string/haircare</item>
+        <item>@string/beauty_tools</item>
+        <item>@string/home_fragrances</item>
+        <item>@string/gift</item>
+        <item>@string/men</item>
+    </string-array>
+    <integer-array name="images">
+        <item>@drawable/ic_makeup</item>
+        <item>@drawable/ic_skin_care</item>
+        <item>@drawable/ic_hair_care</item>
+        <item>@drawable/ic_tools</item>
+        <item>@drawable/ic_home_fragrances</item>
+        <item>@drawable/ic_gift</item>
+        <item>@drawable/ic_men</item>
+    </integer-array>
+    <integer-array name="images_dummy">
+        <item>@drawable/ic_makeup_enabled</item>
+        <item>@drawable/ic_skin_care_disabled</item>
+        <item>@drawable/ic_hair_care_disabled</item>
+        <item>@drawable/ic_tools_disabled</item>
+        <item>@drawable/ic_home_fragrances_disabled</item>
+        <item>@drawable/ic_gift_disabled</item>
+        <item>@drawable/ic_men_disabled</item>
+    </integer-array>
+</resources>
