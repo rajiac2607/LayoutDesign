@@ -12,7 +12,7 @@ public class PropertiesModel {
     private String offer_price;
     private boolean onOffer;
 
-    public PropertiesModel(int imageResource, String title, String description, String original_price, String offer_price, boolean onOffer) {
+    public PropertiesModel( String title, String description, String original_price, String offer_price, int imageResource,boolean onOffer) {
         this.imageResource = imageResource;
         this.title = title;
         this.description = description;

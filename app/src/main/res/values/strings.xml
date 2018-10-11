@@ -97,7 +97,7 @@
     <string name="candy">Candy</string>
     <string name="the_one_and_text">The One and text \n goes here until it bring</string>
     <string name="n_1">N .1</string>
-    <string-array name="desc_array">
+    <string-array name="best_seller_desc_array">
         <item>@string/candy</item>
         <item>@string/the_one_and_text</item>
         <item>@string/n_1</item>
