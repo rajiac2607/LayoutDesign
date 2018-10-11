@@ -10,15 +10,15 @@ import java.util.ArrayList;
 
 import in.raji.goldenscent.R;
 import in.raji.goldenscent.databinding.ListItemMasterBinding;
-import in.raji.goldenscent.model.MasterItemModel;
+import in.raji.goldenscent.model.ChildItemModel;
 
 /**
  * Created by Raji on 11/10/2018.
  */
 public class MasterRecyclerViewAdapter extends RecyclerView.Adapter<MasterRecyclerViewAdapter.MasterViewHolder> {
-    private ArrayList<MasterItemModel> items;
+    private ArrayList<ChildItemModel> items;
 
-    public MasterRecyclerViewAdapter(ArrayList<MasterItemModel> items) {
+    public MasterRecyclerViewAdapter(ArrayList<ChildItemModel> items) {
         this.items = items;
     }
 
@@ -30,7 +30,7 @@ public class MasterRecyclerViewAdapter extends RecyclerView.Adapter<MasterRecycl
             this.listItemBinding = listItemBinding;
 
         }
-        void bind(MasterItemModel itemModel) {
+        void bind(ChildItemModel itemModel) {
             listItemBinding.setModel(itemModel);
 
         }

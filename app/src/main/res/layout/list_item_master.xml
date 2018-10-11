@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="in.raji.goldenscent.model.MasterItemModel" />
+            type="in.raji.goldenscent.model.ChildItemModel" />
     </data>
 
     <android.support.v7.widget.CardView

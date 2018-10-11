@@ -8,14 +8,14 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 
 import in.raji.goldenscent.R;
-import in.raji.goldenscent.model.MasterItemModel;
+import in.raji.goldenscent.model.ChildItemModel;
 
 /**
  * Created by Raji on 10/10/2018.
  */
 public class MasterViewModel extends AndroidViewModel {
 
-    ArrayList<MasterItemModel> modelArrayList = new ArrayList<>();
+    ArrayList<ChildItemModel> modelArrayList = new ArrayList<>();
 
     public MasterViewModel(@NonNull Application application) {
         super(application);
@@ -26,22 +26,17 @@ public class MasterViewModel extends AndroidViewModel {
     private void init() {
 
         String[] titles = getApplication().getResources().getStringArray(R.array.master_titles);
-      //  int[] images = getApplication().getResources().getIntArray(R.array.images);
-//        int[] images = {R.drawable.ic_makeup, R.drawable.ic_skin_care, R.drawable.ic_hair_care,
-//                R.drawable.ic_tools, R.drawable.ic_home_fragrances, R.drawable.ic_gift,
-//                R.drawable.ic_men};
-
-        final TypedArray images = getApplication().getResources().obtainTypedArray(R.array.images);
+        final TypedArray images = getApplication().getResources().obtainTypedArray(R.array.master_images);
         for (int i = 0; i < titles.length; i++)
-            modelArrayList.add(new MasterItemModel(titles[i], images.getResourceId(i,-1)));
+            modelArrayList.add(new ChildItemModel(titles[i], images.getResourceId(i, -1)));
 
     }
 
-    public ArrayList<MasterItemModel> getModelArrayList() {
+    public ArrayList<ChildItemModel> getModelArrayList() {
         return modelArrayList;
     }
 
-    public void setModelArrayList(ArrayList<MasterItemModel> modelArrayList) {
+    public void setModelArrayList(ArrayList<ChildItemModel> modelArrayList) {
         this.modelArrayList = modelArrayList;
     }
 }

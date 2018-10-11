@@ -3,11 +3,11 @@ package in.raji.goldenscent.model;
 /**
  * Created by Raji on 10/10/2018.
  */
-public class MasterItemModel {
+public class ChildItemModel {
     private String title;
     private int imgResource;
 
-    public MasterItemModel(String title, int imgResource) {
+    public ChildItemModel(String title, int imgResource) {
         this.title = title;
         this.imgResource = imgResource;
     }

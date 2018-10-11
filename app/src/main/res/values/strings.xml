@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GoldenScent</string>
 
-
+    <!--left pane-->
     <string name="makeup">Makeup</string>
     <string name="skincare">Skincare</string>
     <string name="haircare">Haircare</string>
@@ -19,7 +19,7 @@
         <item>@string/gift</item>
         <item>@string/men</item>
     </string-array>
-    <integer-array name="images">
+    <integer-array name="master_images">
         <item>@drawable/ic_makeup</item>
         <item>@drawable/ic_skin_care</item>
         <item>@drawable/ic_hair_care</item>
@@ -28,13 +28,44 @@
         <item>@drawable/ic_gift</item>
         <item>@drawable/ic_men</item>
     </integer-array>
-    <integer-array name="images_dummy">
-        <item>@drawable/ic_makeup_enabled</item>
-        <item>@drawable/ic_skin_care_disabled</item>
-        <item>@drawable/ic_hair_care_disabled</item>
-        <item>@drawable/ic_tools_disabled</item>
-        <item>@drawable/ic_home_fragrances_disabled</item>
-        <item>@drawable/ic_gift_disabled</item>
-        <item>@drawable/ic_men_disabled</item>
+
+
+    <!--Right pane-->
+    <!--bottom expandable list-->
+    <string name="lips">Lips</string>
+    <string name="face">Face</string>
+    <string name="nails">Nails</string>
+
+    <string-array name="expandable_list_titles">
+        <item>@string/lips</item>
+        <item>@string/face</item>
+        <item>@string/nails</item>
+    </string-array>
+
+
+    <string name="pencils">Pencils</string>
+    <string name="lipstick">Lipstick</string>
+    <string name="lipgloss">Lipgloss</string>
+    <string name="lipbalm">Lip Balm</string>
+    <string name="treatment">Treatment</string>
+    <string name="palette">Palette</string>
+
+    <string-array name="expandable_list_child_titles">
+        <item>@string/pencils</item>
+        <item>@string/lipstick</item>
+        <item>@string/lipgloss</item>
+        <item>@string/lipbalm</item>
+        <item>@string/treatment</item>
+        <item>@string/palette</item>
+    </string-array>
+    <integer-array name="expandable_list_images">
+        <item>@drawable/ic_pencil</item>
+        <item>@drawable/ic_lipstick</item>
+        <item>@drawable/ic_lipgloss</item>
+        <item>@drawable/ic_lipbalm</item>
+        <item>@drawable/ic_treatment</item>
+        <item>@drawable/ic_palette</item>
     </integer-array>
+
+
 </resources>
