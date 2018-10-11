@@ -5,8 +5,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -15,15 +14,15 @@
             android:layout_marginBottom="4dp"
             android:scaleType="fitXY"
             android:src="@drawable/banner"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+            app:layout_constraintBottom_toTopOf="@+id/viewpager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,6 +30,6 @@
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent=".7"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"></android.support.v7.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </android.support.constraint.ConstraintLayout>
 </layout>

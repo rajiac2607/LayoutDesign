@@ -68,4 +68,67 @@
     </integer-array>
     <string name="view_all_lips">View All Lips</string>
 
+
+    <!--best seller-->
+
+    <string name="prada">PRADA</string>
+    <string name="dolce">DOLCE &amp;GABBANA S..</string>
+    <string name="aigner">AIGNER</string>
+
+    <string-array name="best_seller_titles">
+        <item>@string/prada</item>
+        <item>@string/dolce</item>
+        <item>@string/aigner</item>
+        <item>@string/prada</item>
+        <item>@string/dolce</item>
+        <item>@string/aigner</item>
+    </string-array>
+
+    <integer-array name="best_seller_image">
+        <item>@drawable/ic_prada</item>
+        <item>@drawable/ic_docle</item>
+        <item>@drawable/ic_aigner</item>
+        <item>@drawable/ic_prada</item>
+        <item>@drawable/ic_docle</item>
+        <item>@drawable/ic_aigner</item>
+    </integer-array>
+
+
+    <string name="candy">Candy</string>
+    <string name="the_one_and_text">The One and text \n goes here until it bring</string>
+    <string name="n_1">N .1</string>
+    <string-array name="desc_array">
+        <item>@string/candy</item>
+        <item>@string/the_one_and_text</item>
+        <item>@string/n_1</item>
+        <item>@string/candy</item>
+        <item>@string/the_one_and_text</item>
+        <item>@string/n_1</item>
+    </string-array>
+
+
+    <string name="first_original_price">356 SR</string>
+    <string name="second_original_price">356 SR</string>
+    <string name="thrid_original_price">356 SR</string>
+    <string-array name="original_price_array">
+        <item>@string/first_original_price</item>
+        <item>@string/second_original_price</item>
+        <item>@string/thrid_original_price</item>
+        <item>@string/first_original_price</item>
+        <item>@string/second_original_price</item>
+        <item>@string/thrid_original_price</item>
+    </string-array>
+
+
+    <string name="first_offer_price">326 SR</string>
+    <string name="second_offer_price"></string>
+    <string name="thrid_offer_price"></string>
+    <string-array name="offer_price_array">
+        <item>@string/first_offer_price</item>
+        <item>@string/second_offer_price</item>
+        <item>@string/thrid_offer_price</item>
+        <item>@string/first_offer_price</item>
+        <item>@string/second_offer_price</item>
+        <item>@string/thrid_offer_price</item>
+    </string-array>
 </resources>
