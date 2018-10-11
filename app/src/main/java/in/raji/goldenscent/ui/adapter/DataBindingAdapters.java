@@ -1,4 +1,4 @@
-package in.raji.goldenscent.ui;
+package in.raji.goldenscent.ui.adapter;
 
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;

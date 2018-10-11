@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    tools:context=".ui.activity.MainActivity"
+    android:background="@android:color/white">
 
     <fragment
         android:id="@+id/master_fragment"
@@ -33,6 +34,7 @@
         app:layout_constraintStart_toEndOf="@+id/master_fragment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".7" />
+        app:layout_constraintWidth_percent=".7"
+        />
 
 </android.support.constraint.ConstraintLayout>

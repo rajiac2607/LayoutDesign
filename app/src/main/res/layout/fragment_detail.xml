@@ -2,30 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/margin_4"
-            android:layout_weight=".2"
-            android:scaleType="fitXY"
-            android:src="@drawable/banner" />
-
-        <fragment
-            android:id="@+id/fragment_bestseller"
-            class="in.raji.goldenscent.ui.fragment.BestSellerFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/margin_4"
-            android:layout_weight=".3" />
 
         <ExpandableListView
+            android:id="@+id/expandable_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5">
+            android:layout_height="wrap_content">
 
         </ExpandableListView>
     </LinearLayout>

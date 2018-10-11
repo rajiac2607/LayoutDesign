@@ -66,6 +66,6 @@
         <item>@drawable/ic_treatment</item>
         <item>@drawable/ic_palette</item>
     </integer-array>
-
+    <string name="view_all_lips">View All Lips</string>
 
 </resources>
