@@ -35,6 +35,7 @@ public class BestSellerViewModel extends AndroidViewModel {
 
         propertiesModels.get(0).setOnOffer(true);
         propertiesModels.get(3).setOnOffer(true);
+        propertiesModels.get(6).setOnOffer(true);
 
 
     }

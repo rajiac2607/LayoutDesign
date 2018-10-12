@@ -26,12 +26,8 @@ public class BestSellerFragment extends BaseFragment<BestSellerViewModel, Fragme
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //dataBinding.viewpager.setPageMargin(-100);
 
         dataBinding.viewpager.setAdapter(new ViewPagerAdapter(viewModel.getPropertiesModels(), getActivity().getApplicationContext()));
-//        dataBinding.viewpager.setPadding(20 , 0, 20, 0);
-//        dataBinding.viewpager.setClipToPadding(false);
-//        dataBinding.viewpager.setPageMargin(-100);
 
     }
 }

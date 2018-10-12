@@ -82,9 +82,15 @@
         <item>@string/prada</item>
         <item>@string/dolce</item>
         <item>@string/aigner</item>
+        <item>@string/prada</item>
+        <item>@string/dolce</item>
+        <item>@string/aigner</item>
     </string-array>
 
     <integer-array name="best_seller_image">
+        <item>@drawable/ic_prada</item>
+        <item>@drawable/ic_docle</item>
+        <item>@drawable/ic_aigner</item>
         <item>@drawable/ic_prada</item>
         <item>@drawable/ic_docle</item>
         <item>@drawable/ic_aigner</item>
@@ -104,6 +110,9 @@
         <item>@string/candy</item>
         <item>@string/the_one_and_text</item>
         <item>@string/n_1</item>
+        <item>@string/candy</item>
+        <item>@string/the_one_and_text</item>
+        <item>@string/n_1</item>
     </string-array>
 
 
@@ -111,6 +120,9 @@
     <string name="second_original_price">356 SR</string>
     <string name="thrid_original_price">356 SR</string>
     <string-array name="original_price_array">
+        <item>@string/first_original_price</item>
+        <item>@string/second_original_price</item>
+        <item>@string/thrid_original_price</item>
         <item>@string/first_original_price</item>
         <item>@string/second_original_price</item>
         <item>@string/thrid_original_price</item>
@@ -130,9 +142,12 @@
         <item>@string/first_offer_price</item>
         <item>@string/second_offer_price</item>
         <item>@string/thrid_offer_price</item>
+        <item>@string/first_offer_price</item>
+        <item>@string/second_offer_price</item>
+        <item>@string/thrid_offer_price</item>
     </string-array>
 
-    
+
     <string name="add">ADD</string>
     <string name="best_sellers">Bestsellers</string>
     <string name="view_all">View All</string>

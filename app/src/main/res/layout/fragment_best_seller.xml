@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:padding="24dp"
             android:text="@string/view_all"
-            android:textSize="14sp"
+            android:textSize="@dimen/medium_text_size"
             app:layout_constraintBaseline_toBaselineOf="@+id/head_title"
             app:layout_constraintEnd_toEndOf="parent" />
 
