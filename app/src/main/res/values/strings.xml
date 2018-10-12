@@ -132,4 +132,6 @@
         <item>@string/thrid_offer_price</item>
     </string-array>
     <string name="add">ADD</string>
+    <string name="best_sellers">Best Sellers</string>
+    <string name="view_all">View All</string>
 </resources>

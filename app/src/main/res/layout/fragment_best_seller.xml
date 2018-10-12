@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayout"
@@ -11,25 +12,48 @@
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
             android:scaleType="fitXY"
             android:src="@drawable/banner"
-            app:layout_constraintBottom_toTopOf="@+id/viewpager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintHeight_percent=".2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_8"
+            android:text="@string/best_sellers"
+            app:layout_constraintTop_toTopOf="@+id/viewpager"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".1"
+            android:textSize="18sp"
+            android:layout_marginStart="@dimen/margin_16"
+             />
+
+        <TextView
+            android:id="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="24dp"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/head_title"/>
+
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent=".7"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/head_title" />
     </android.support.constraint.ConstraintLayout>
 </layout>
