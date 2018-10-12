@@ -16,7 +16,7 @@ import in.raji.goldenscent.model.ChildItemModel;
  * Created by Raji on 11/10/2018.
  */
 public class MasterRecyclerViewAdapter extends RecyclerView.Adapter<MasterRecyclerViewAdapter.MasterViewHolder> {
-    private ArrayList<ChildItemModel> items;
+    private final ArrayList<ChildItemModel> items;
 
     public MasterRecyclerViewAdapter(ArrayList<ChildItemModel> items) {
         this.items = items;
@@ -25,7 +25,7 @@ public class MasterRecyclerViewAdapter extends RecyclerView.Adapter<MasterRecycl
     class MasterViewHolder extends RecyclerView.ViewHolder {
         private final ListItemMasterBinding listItemBinding;
 
-        public MasterViewHolder(@NonNull ListItemMasterBinding listItemBinding) {
+        MasterViewHolder(@NonNull ListItemMasterBinding listItemBinding) {
             super(listItemBinding.getRoot());
             this.listItemBinding = listItemBinding;
 

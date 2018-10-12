@@ -7,6 +7,7 @@ import android.view.View;
 
 import in.raji.goldenscent.R;
 import in.raji.goldenscent.databinding.FragmentDetailBinding;
+import in.raji.goldenscent.ui.Utility;
 import in.raji.goldenscent.ui.adapter.ExpandableListAdapter;
 import in.raji.goldenscent.viewmodel.DetailViewModel;
 
@@ -33,11 +34,9 @@ public class DetailFragment extends BaseFragment<DetailViewModel, FragmentDetail
         DisplayMetrics metrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels;
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            dataBinding.expandableList.setIndicatorBounds(width - GetPixelFromDips(250), width - GetPixelFromDips(10));
-        } else {
-            dataBinding.expandableList.setIndicatorBoundsRelative(width - GetPixelFromDips(250), width - GetPixelFromDips(10));
-        }
+        dataBinding.expandableList.setIndicatorBoundsRelative(
+                width - Utility.convertDp_to_Px(getContext(), 250),
+                width - Utility.convertDp_to_Px(getContext(), 10));
         dataBinding.expandableList.expandGroup(0);
 
         View headerView = getLayoutInflater().inflate(R.layout.list_header, null);
@@ -46,8 +45,4 @@ public class DetailFragment extends BaseFragment<DetailViewModel, FragmentDetail
     }
 
 
-    public int GetPixelFromDips(float pixels) {
-        final float scale = getResources().getDisplayMetrics().density;
-        return (int) (pixels * scale + 0.5f);
-    }
 }

@@ -5,11 +5,7 @@
     <size
         android:width="1dp"
         android:height="1dp" />
-    <padding
-        android:bottom="0dp"
-        android:left="32dp"
-        android:right="@dimen/margin_16"
-        android:top="0dp" />
+
     <solid android:color="@color/grey" />
 
 </shape>

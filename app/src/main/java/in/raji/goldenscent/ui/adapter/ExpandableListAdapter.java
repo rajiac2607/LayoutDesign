@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import in.raji.goldenscent.R;
 import in.raji.goldenscent.databinding.ExpandableListChildItemBinding;
-import in.raji.goldenscent.databinding.ExpandableListParentItemBinding;
 import in.raji.goldenscent.databinding.GridItemBinding;
 import in.raji.goldenscent.model.ChildItemModel;
 import in.raji.goldenscent.model.ParentItemModel;
@@ -21,8 +22,7 @@ import in.raji.goldenscent.model.ParentItemModel;
  * Created by Raji on 11/10/2018.
  */
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
-    ArrayList<ParentItemModel> parentList;
-    Context context;
+    private final ArrayList<ParentItemModel> parentList;
 
     public ExpandableListAdapter(ArrayList<ParentItemModel> parentList) {
         this.parentList = parentList;
@@ -65,13 +65,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        ExpandableListParentItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.expandable_list_parent_item, parent, false);
 
         if (convertView == null) {
-            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.expandable_list_parent_item, parent, false);
-            convertView = binding.getRoot();
+            LayoutInflater inflator = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = Objects.requireNonNull(inflator).inflate(R.layout.expandable_list_parent_item, null);
         }
-        binding.setModel(parentList.get(groupPosition));
+
+        ((TextView) convertView.findViewById(R.id.title)).setText(parentList.get(groupPosition).getTitle());
         return convertView;
     }
 
@@ -93,9 +93,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     class GridAdapter extends BaseAdapter {
-        ArrayList<ChildItemModel> children;
+        final ArrayList<ChildItemModel> children;
 
-        public GridAdapter(ArrayList<ChildItemModel> children) {
+        GridAdapter(ArrayList<ChildItemModel> children) {
             this.children = children;
         }
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import in.raji.goldenscent.R;
 import in.raji.goldenscent.databinding.ItemPropertiesBinding;
@@ -22,8 +23,8 @@ import in.raji.goldenscent.ui.ItemDecorator;
  * Created by Raji on 11/10/2018.
  */
 public class ViewPagerAdapter extends PagerAdapter {
-    ArrayList<PropertiesModel> models;
-    Context context;
+    private final ArrayList<PropertiesModel> models;
+    private Context context;
 
     public ViewPagerAdapter(ArrayList<PropertiesModel> models,
                             Context context) {
@@ -53,16 +54,15 @@ public class ViewPagerAdapter extends PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View viewLayout = inflater.inflate(R.layout.fragment_master, null);
-        ArrayList<PropertiesModel> subList = new ArrayList<>();
-        subList.addAll(models.subList(position * 3, position * 3 + 3));
-        RecyclerView recyclerView = ((RecyclerView) viewLayout.findViewById(R.id.recyclerView));
+        View viewLayout = Objects.requireNonNull(inflater).inflate(R.layout.fragment_master, null);
+        ArrayList<PropertiesModel> subList = new ArrayList<>(models.subList(position * 3, position * 3 + 3));
+        RecyclerView recyclerView = viewLayout.findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new RecyclerViewAdapter(subList));
         recyclerView.addItemDecoration(new ItemDecorator(context));
-//
+
         container.addView(viewLayout);
         return viewLayout;
 
@@ -81,14 +81,14 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         ArrayList<PropertiesModel> models;
 
-        public RecyclerViewAdapter(ArrayList<PropertiesModel> models) {
+        RecyclerViewAdapter(ArrayList<PropertiesModel> models) {
             this.models = models;
         }
 
         class PropertiesViewHolder extends RecyclerView.ViewHolder {
             ItemPropertiesBinding binding;
 
-            public PropertiesViewHolder(@NonNull ItemPropertiesBinding binding) {
+            PropertiesViewHolder(@NonNull ItemPropertiesBinding binding) {
                 super(binding.getRoot());
                 this.binding = binding;
             }

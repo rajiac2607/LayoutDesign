@@ -12,7 +12,7 @@ import in.raji.goldenscent.R;
  * Created by Raji on 12/10/2018.
  */
 public class ItemDecorator extends RecyclerView.ItemDecoration {
-    private Drawable mDivider;
+    private final Drawable mDivider;
 
     public ItemDecorator(Context context) {
         mDivider = context.getResources().getDrawable(R.drawable.recycler_divider);
