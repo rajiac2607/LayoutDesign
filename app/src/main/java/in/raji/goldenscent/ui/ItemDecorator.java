@@ -32,7 +32,7 @@ public class ItemDecorator extends RecyclerView.ItemDecoration {
             int top = child.getBottom() + params.bottomMargin;
             int bottom = top + mDivider.getIntrinsicHeight();
 
-            mDivider.setBounds(left+200, top, right+16, bottom);
+            mDivider.setBounds(left+Utility.convertDp_to_Px(parent.getContext(),50), top, right+16, bottom);
             mDivider.draw(c);
         }
     }

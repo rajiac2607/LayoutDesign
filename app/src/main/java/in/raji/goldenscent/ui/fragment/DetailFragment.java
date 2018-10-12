@@ -29,14 +29,14 @@ public class DetailFragment extends BaseFragment<DetailViewModel, FragmentDetail
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
         dataBinding.expandableList.setAdapter(new ExpandableListAdapter(viewModel.getItems()));
+
         DisplayMetrics metrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels;
-        dataBinding.expandableList.setIndicatorBoundsRelative(
-                width - Utility.convertDp_to_Px(getContext(), 250),
-                width - Utility.convertDp_to_Px(getContext(), 10));
+
+        dataBinding.expandableList.setIndicatorBoundsRelative(width - Utility.convertDp_to_Px(getContext(),250), width - Utility.convertDp_to_Px(getContext(),10));
+
         dataBinding.expandableList.expandGroup(0);
 
         View headerView = getLayoutInflater().inflate(R.layout.list_header, null);
