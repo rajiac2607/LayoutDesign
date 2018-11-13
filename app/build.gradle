@@ -39,6 +39,4 @@ dependencies {
 
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.list_header:runner:1.0.2'
-    androidTestImplementation 'com.android.support.list_header.espresso:espresso-core:3.0.2'
 }
