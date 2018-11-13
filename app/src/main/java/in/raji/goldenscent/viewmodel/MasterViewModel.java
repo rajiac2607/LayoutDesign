@@ -15,7 +15,7 @@ import in.raji.goldenscent.model.ChildItemModel;
  */
 public class MasterViewModel extends AndroidViewModel {
 
-    ArrayList<ChildItemModel> modelArrayList = new ArrayList<>();
+    private ArrayList<ChildItemModel> modelArrayList = new ArrayList<>();
 
     public MasterViewModel(@NonNull Application application) {
         super(application);

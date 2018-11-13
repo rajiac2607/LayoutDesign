@@ -8,10 +8,86 @@
             type="in.raji.goldenscent.model.PropertiesModel" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
-
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
 
-    </android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:padding="@dimen/dimen_16"
+            android:scaleType="fitXY"
+            android:src="@{model.imageResource}" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_marginBottom="@dimen/dimen_2">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@{model.title}"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignParentTop="true"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="@{model.description}"
+                android:textSize="@dimen/small_text_size" />
+
+
+            <TextView
+                android:id="@+id/original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:text="@{model.original_price}"
+                android:textSize="@dimen/small_text_size"
+
+                />
+
+            <TextView
+                android:id="@+id/offer_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@id/original_price"
+                android:text="@{model.offer_price}"
+                android:textColor="@color/red"
+
+                android:textSize="@dimen/small_text_size" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_32"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".2"
+            android:background="@drawable/oval"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/small_text_size"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:text="@string/add" />
+    </LinearLayout>
 </layout>

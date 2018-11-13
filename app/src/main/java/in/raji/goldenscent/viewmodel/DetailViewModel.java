@@ -16,7 +16,7 @@ import in.raji.goldenscent.model.ParentItemModel;
  */
 public class DetailViewModel extends AndroidViewModel {
 
-    ArrayList<ParentItemModel> items = new ArrayList<>();
+    private ArrayList<ParentItemModel> items = new ArrayList<>();
 
     public DetailViewModel(@NonNull Application application) {
         super(application);
@@ -34,8 +34,7 @@ public class DetailViewModel extends AndroidViewModel {
             children.add(new ChildItemModel(titles[i], images.getResourceId(i, -1)));
 
 
-        for (int i = 0; i < title.length; i++)
-            items.add(new ParentItemModel(title[i], children));
+        for (String aTitle : title) items.add(new ParentItemModel(aTitle, children));
 
 
     }

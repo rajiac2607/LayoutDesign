@@ -14,7 +14,7 @@ import in.raji.goldenscent.model.PropertiesModel;
  * Created by Raji on 11/10/2018.
  */
 public class BestSellerViewModel extends AndroidViewModel {
-    ArrayList<PropertiesModel> propertiesModels = new ArrayList<>();
+    private ArrayList<PropertiesModel> propertiesModels = new ArrayList<>();
 
     public BestSellerViewModel(@NonNull Application application) {
         super(application);
@@ -33,6 +33,18 @@ public class BestSellerViewModel extends AndroidViewModel {
             propertiesModels.add(new PropertiesModel(titles[i],
                     desc[i], original_price[i], offer_price[i], images.getResourceId(i, -1), false));
 
+        propertiesModels.get(0).setOnOffer(true);
+        propertiesModels.get(3).setOnOffer(true);
+        propertiesModels.get(6).setOnOffer(true);
 
+
+    }
+
+    public ArrayList<PropertiesModel> getPropertiesModels() {
+        return propertiesModels;
+    }
+
+    public void setPropertiesModels(ArrayList<PropertiesModel> propertiesModels) {
+        this.propertiesModels = propertiesModels;
     }
 }

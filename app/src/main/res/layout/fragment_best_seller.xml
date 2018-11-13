@@ -11,25 +11,48 @@
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
             android:scaleType="fitXY"
             android:src="@drawable/banner"
-            app:layout_constraintBottom_toTopOf="@+id/viewpager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:padding="@dimen/dimen_8"
+            android:text="@string/best_sellers"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".1"
+            app:layout_constraintTop_toTopOf="@+id/viewpager"
+            android:layout_marginBottom="@dimen/dimen_16"/>
+
+        <TextView
+            android:id="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:text="@string/view_all"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/head_title"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent=".7"
+            app:layout_constraintHeight_percent=".6"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/head_title" />
     </android.support.constraint.ConstraintLayout>
 </layout>
